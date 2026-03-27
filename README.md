@@ -1,0 +1,33 @@
+# 🪥 5살 체하딤 양치시키기 
+
+> "시러!! 치카치카 안 해!! 나 도망갈 거야!!"
+> 양치하기 싫어하는 5살 금쪽이 '체하딤'을 10턴 안에 설득하여 무사히 양치를 끝마치는 텍스트 기반 시뮬레이션 게임입니다.
+
+## 🎮 프로젝트 소개
+유아 발달 심리학(자기중심적 사고, 물활론적 사고)을 기반으로 설계된 5살 페르소나 AI와 대결합니다. 플레이어의 대화 방식(논리, 강압, 공감, 상상)에 따라 아이의 고집과 신뢰 지수가 실시간으로 변동하며, 총 6단계의 양치 과정을 무사히 넘겨야 합니다.
+
+![게임 실행 화면](<img width="629" height="517" alt="image" src="https://github.com/user-attachments/assets/cba601a5-3026-4978-a991-b386d72348b0" />)
+
+<img width="627" height="740" alt="image" src="https://github.com/user-attachments/assets/5a2d8114-c55d-478d-8ead-0ee9b6cae501" />
+
+
+
+## ✨ 주요 기능 및 특징 (Key Features)
+
+### 1. Fine-tuned LLM 기반의 강력한 페르소나
+* 단순한 프롬프트 엔지니어링을 넘어, 5살 아이의 떼쓰는 화법과 심리 변화 패턴을 학습시킨 **파인튜닝 모델(`ft:gpt-3.5-turbo-0125`)**을 적용했습니다.
+* 어른스러운 어휘를 철저히 배제하고, 예측 불가능하고 고집스러운 '진짜 5살'의 반응을 구현했습니다.
+
+### 2. JSON Mode를 활용한 동적 상태 관리 (State Management)
+LLM이 단순히 텍스트만 생성하는 것이 아니라, 매 대화 턴마다 내부 상태 지수를 계산하여 JSON 형태로 반환합니다.
+* 😡 **고집 (Stubbornness):** 논리적이거나 강압적인 태도를 보이면 상승. **100 도달 시 울음 폭발로 GAME OVER.**
+* 🤝 **신뢰 (Trust):** 아이의 마음에 공감해주면 상승. 설득의 성공률을 높입니다.
+* 🪥 **진행도 (Progress):** 재미있는 역할극이나 상상을 유도하면 상승. **100 도달 시 양치 SUCCESS!**
+
+### 3. 6단계 Stage 시스템
+아이의 행동 변화를 6가지 상태(`runaway` -> `bathroom` -> `toothbrush` -> `open_mouth` -> `brushing` -> `rinse`)로 정의하여 게임의 서사와 몰입감을 더했습니다.
+
+## 🛠 기술 스택 (Tech Stack)
+* **Language:** Python
+* **Web UI:** Streamlit
+* **AI/NLP:** OpenAI API (Fine-tuned GPT-3.5)
